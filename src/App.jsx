@@ -175,8 +175,8 @@ function App() {
                     className="bg-blue-500 p-4 rounded-2xl hover:bg-slate-400">
                     Download CV <i className="ri-download-line ri-lg"></i></a>
 
-                  <a href="#proyek" className="bg-slate-300 p-4 rounded-2xl hover:bg-blue-300 text-black">
-                    Lihat Proyek <i className="ri-arrow-down-line ri-lg text-black"></i></a>
+                  <a href="#" className="bg-slate-300 p-4 rounded-2xl hover:bg-blue-300 text-black">
+                    Lihat Sertifikat <i className="ri-arrow-down-line ri-lg text-black"></i></a>
                 </div>
 
               </div>
