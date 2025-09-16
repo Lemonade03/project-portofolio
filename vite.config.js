@@ -8,4 +8,5 @@ export default defineConfig({
   root: './',
   build: {
   outdir: 'dist'},
+  base: '/project-portofolio/',
 });
