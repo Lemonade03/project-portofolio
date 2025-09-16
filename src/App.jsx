@@ -155,7 +155,7 @@ function App() {
                 </div>
 
                 <h1 className="text-5xl/tight font-bold mb-6">Hi, Saya Mohammad Rizqy Ramadhan</h1>
-                <p className="text-base/loose mb-6 opacity-90 font-bold">
+                <p className="text-base/loose mb-6 opacity-90 font-semibold">
                   Lulusan SMK tahun 2019 umur 25 tahun, seorang yang cekatan, sigap, dapat diandalkan bekerja sama dengan tim dan dapat berkomunikasi dengan baik.
                   Saya mempunyai ketertarikkan dalam bidang Programming dan Designer. terutama pada pembuatan Website dan Desain UI/UX. Saya baru selesai
                   mengikuti pelatihan web progamming yang di selenggaran oleh Pemerintah Kota Tangerang melalui blk Kota Tangerang dan
