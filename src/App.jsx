@@ -171,7 +171,7 @@ function App() {
                   </a>
 
                   <a href="/cvmohammadrizqyramadhan.pdf"
-                    download="cvmohammadrizqyramadhan.pdf"
+                    download="cvmohammadrizqyramadhan.pdf" 
                     className="bg-blue-500 p-4 rounded-2xl hover:bg-slate-400">
                     Download CV <i className="ri-download-line ri-lg"></i></a>
 
