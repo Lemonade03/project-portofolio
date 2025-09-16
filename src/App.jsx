@@ -163,15 +163,15 @@ function App() {
                 </p>
                 <div className="flex items-center sm:gap-4 gap-2">
                   <a
-                    href="/cv-mohammad-rizqy-ramadhan.pdf"
+                    href="/cvmohammadrizqyramadhan.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600">
                     Lihat CV <i className="ri-eye-line ri-lg"></i>
                   </a>
 
-                  <a href="/cv-mohammad-rizqyramadhan.pdf"
-                    download="cv-mohammad-rizqyramadhan.pdf"
+                  <a href="/cvmohammadrizqyramadhan.pdf"
+                    download="cvmohammadrizqyramadhan.pdf"
                     className="bg-blue-500 p-4 rounded-2xl hover:bg-slate-400">
                     Download CV <i className="ri-download-line ri-lg"></i></a>
 
