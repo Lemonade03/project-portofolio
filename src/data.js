@@ -1,7 +1,9 @@
 import HeroImage from "/assets/hero-img.png";
+import SecondImage from "/assets/hero-img2.jpg";
 
 const Image = {
   HeroImage,
+  SecondImage  
 };
 
 export default Image;

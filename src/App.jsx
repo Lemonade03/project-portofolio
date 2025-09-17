@@ -17,6 +17,8 @@ import Particles from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 import { initParticlesEngine } from "@tsparticles/react";
 import { TypeAnimation } from 'react-type-animation';
+import './components/PixelTransition.css';
+import PixelTransition from './components/PixelTransition';
 
 import PreLoaderTyping from "./components/PreLoaderTyping";
 
@@ -81,9 +83,12 @@ function App() {
 
 
   return (
+
+
     <div className="min-h-screen relative"
       style={{ background: loading ? "#1e293b" : "transparent" }}
     >
+
       {loading ? (
         <PreLoaderTyping onFinish={() => setLoading(false)} />
       ) : !showHero ? (
@@ -142,7 +147,7 @@ function App() {
           <div className="relative z-10">
             {/* HERO */}
             <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1 ">
-              <div className="animate__animated animate__fadeInUp animate__delay-3s">
+              <div className="animate__animated animate__fadeInUp animate__delay-3s text-left">
                 <div className="flex items-center gap-3 mb-6 bg-slate-300 w-fit p-4 rounded-2xl">
                   <img src={DataImage.HeroImage}
                     alt="Hero Image"
@@ -154,7 +159,7 @@ function App() {
                   </q>
                 </div>
 
-                <h1 className="text-5xl/tight font-bold mb-6">Hi, Saya Mohammad Rizqy Ramadhan</h1>
+                <h1 className="text-5xl leading-tight font-bold mb-6">Hi, Saya Mohammad Rizqy Ramadhan</h1>
                 <p className="text-base/loose mb-6 opacity-90 font-semibold">
                   Lulusan SMK tahun 2019 umur 25 tahun, seorang yang cekatan, sigap, dapat diandalkan bekerja sama dengan tim dan dapat berkomunikasi dengan baik.
                   Saya mempunyai ketertarikkan dalam bidang Programming dan Designer. terutama pada pembuatan Website dan Desain UI/UX. Saya baru selesai
@@ -171,7 +176,7 @@ function App() {
                   </a>
 
                   <a href={`${import.meta.env.BASE_URL}cvmohammadrizqyramadhan.pdf`}
-                    download="cvmohammadrizqyramadhan.pdf" 
+                    download="cvmohammadrizqyramadhan.pdf"
                     className="bg-blue-500 p-4 rounded-2xl hover:bg-slate-400">
                     Download CV <i className="ri-download-line ri-lg"></i></a>
 
@@ -180,12 +185,31 @@ function App() {
                 </div>
 
               </div>
-              <img src={DataImage.HeroImage}
-                alt="Hero Image"
-                className="w-[500px] md:ml-auto  animate__animated animate__zoomIn animate__delay-4s rounded-xl transition-transform duration-300 hover:scale-125 cursor-pointer"
-                loading="lazy" />
+              <div className="w-full flex justify-end items-center pr-4 md:pr-8 h-[500px] md:ml-auto  animate__animated animate__zoomIn animate__delay-4s" loading="lazy"> 
+              <PixelTransition
+                firstContent={
+                  <img
+                    src={DataImage.HeroImage}
+                    alt="Hero Image"
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                }
+                secondContent={
+                  <img
+                    src={DataImage.SecondImage}
+                    alt="Second Image"
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                }
+                gridSize={12}
+                pixelColor='#ffffff'
+                animationStepDuration={0.4}
+                className="custom-pixel-card"
+                style={{ width: "450px", height: "450px" }}
+              />
+              
             </div>
-
+              </div>
             {/* tentang */}
             <div className="tentang mt-32 py-10" id="tentang">
               <div className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 bg-zinc-300 rounded-lg" data-aos="fade-up"
@@ -228,7 +252,7 @@ function App() {
           grid-cols-1 gap-4">
 
                   {listTools.map(tool => (
-                    <div className="flex items-center gap-2 p-3 border bg-slate-300 border-zinc-600 rounded-md 
+                    <div className="flex items-start text-left gap-2 p-3 border bg-slate-300 border-zinc-600 rounded-md 
             hover:bg-blue-300 group" key={tool.id} data-aos="fade-up"
                       data-aos-duration="1000" data-aos-delay={tool.dad}>
                       <img src={tool.gambar} alt="Tools Image" className="w-14 bg-zinc-800 p-1 
@@ -267,11 +291,11 @@ function App() {
                       </div>
                       <div className="mt-8 text-center">
                         <a href={proyek.link} target="_blank" rel="noopener noreferrer"
-                        className="bg-violet-700 p-3 rounded-lg block border border-zinc-600
+                          className="bg-violet-700 p-3 rounded-lg block border border-zinc-600
                    hover:bg-violet-600">Lihat Website </a>
                       </div>
                     </div>
-                  </div>                  
+                  </div>
                 ))}
 
               </div>
