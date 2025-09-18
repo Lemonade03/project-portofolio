@@ -105,11 +105,11 @@ function PixelTransition({
       ref={containerRef}
       className={`
         ${className}
-        bg-[#271E37]
+        
         text-white
         rounded-[15px]
-        border-2
-        border-white
+        
+       
         w-[300px]
         max-w-full
         relative

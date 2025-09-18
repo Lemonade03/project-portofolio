@@ -19,6 +19,9 @@ import { initParticlesEngine } from "@tsparticles/react";
 import { TypeAnimation } from 'react-type-animation';
 import './components/PixelTransition.css';
 import PixelTransition from './components/PixelTransition';
+import VariableProximity from "./components/VariableProximity";
+import { useRef } from 'react';
+
 
 import PreLoaderTyping from "./components/PreLoaderTyping";
 
@@ -29,7 +32,7 @@ function App() {
   const [typedDone, setTypedDone] = useState(false); // teks ketik selesai
   const [hideText, setHideText] = useState(false); // untuk memicu animasi debu
   const [showHero, setShowHero] = useState(false);       // untuk hero konten
-
+  const containerRef = useRef(null);
 
 
 
@@ -149,22 +152,53 @@ function App() {
             <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1 ">
               <div className="animate__animated animate__fadeInUp animate__delay-3s text-left">
                 <div className="flex items-center gap-3 mb-6 bg-slate-300 w-fit p-4 rounded-2xl">
+                  <div
+                    ref={containerRef}
+                    style={{ position: 'relative' }}
+                  >
+                  </div>
                   <img src={DataImage.HeroImage}
                     alt="Hero Image"
                     className="w-10 rounded-md"
                     loading="lazy"
                   />
                   <q className="text-black font-bold">
-                    Pantang Menyerah Sebelum Mencoba.😁
+                    <VariableProximity
+                      label={'Pantang Menyerah Sebelum Mencoba.'}
+                      className={'variable-proximity-demo'}
+                      fromFontVariationSettings="'wght' 800, 'opsz' 9"
+                      toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                      containerRef={containerRef}
+                      radius={100}
+                      falloff='linear'
+                    />
+
+
                   </q>
                 </div>
 
-                <h1 className="text-5xl leading-tight font-bold mb-6">Hi, Saya Mohammad Rizqy Ramadhan</h1>
+                <h1 className="text-5xl leading-tight font-bold mb-6 ">
+                  <VariableProximity
+                    label={'Hi, Saya Mohammad Rizqy Ramadhan'}
+                    className={'variable-proximity-demo'}
+                    fromFontVariationSettings="'wght' 1000, 'opsz' 9"
+                    toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                    containerRef={containerRef}
+                    radius={100}
+                    falloff='linear'
+                  /></h1>
+
                 <p className="text-base/loose mb-6 opacity-90 font-semibold">
-                  Lulusan SMK tahun 2019 umur 25 tahun, seorang yang cekatan, sigap, dapat diandalkan bekerja sama dengan tim dan dapat berkomunikasi dengan baik.
-                  Saya mempunyai ketertarikkan dalam bidang Programming dan Designer. terutama pada pembuatan Website dan Desain UI/UX. Saya baru selesai
-                  mengikuti pelatihan web progamming yang di selenggaran oleh Pemerintah Kota Tangerang melalui blk Kota Tangerang dan
-                  sudah berkompeten mempunyai sertifikasi Badan Nasional Bersertifikasi Profesi.
+
+                  Saya Mohammad Rizqy Ramadhan, lulusan
+                  SMK Bhakti Anindya jurusan Multimedia
+                  tahun 2019. Saat ini saya aktif mencari
+                  pekerjaan dan memiliki keahlian dalam
+                  desain grafis serta penguasaan Microsoft
+                  Office.  Saya mempunyai ketertarikkan dalam bidang Programming dan Designer. terutama pada pembuatan Website dan Desain UI/UX.
+                  Saya baru selesai mengikuti pelatihan web progamming yang di selenggaran oleh Pemerintah Kota Tangerang melalui blk
+                  Kota Tangerang dan sudah berkompeten mempunyai sertifikasi Badan Nasional Bersertifikasi Profesi.
+
                 </p>
                 <div className="flex items-center sm:gap-4 gap-2">
                   <a
@@ -180,36 +214,37 @@ function App() {
                     className="bg-blue-500 p-4 rounded-2xl hover:bg-slate-400">
                     Download CV <i className="ri-download-line ri-lg"></i></a>
 
-                  <a href="#" className="bg-slate-300 p-4 rounded-2xl hover:bg-blue-300 text-black">
+                  <a href={`${import.meta.env.BASE_URL}sertifikat.pdf`}
+                     className="bg-slate-300 p-4 rounded-2xl hover:bg-blue-300 text-black">
                     Lihat Sertifikat <i className="ri-arrow-down-line ri-lg text-black"></i></a>
                 </div>
 
               </div>
-              <div className="w-full flex justify-end items-center pr-4 md:pr-8 h-[500px] md:ml-auto  animate__animated animate__zoomIn animate__delay-4s" loading="lazy"> 
-              <PixelTransition
-                firstContent={
-                  <img
-                    src={DataImage.HeroImage}
-                    alt="Hero Image"
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
-                }
-                secondContent={
-                  <img
-                    src={DataImage.SecondImage}
-                    alt="Second Image"
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
-                }
-                gridSize={12}
-                pixelColor='#ffffff'
-                animationStepDuration={0.4}
-                className="custom-pixel-card"
-                style={{ width: "450px", height: "450px" }}
-              />
-              
-            </div>
+              <div className="w-full flex justify-end items-center pr-4 md:pr-8 h-[500px] md:ml-auto  animate__animated animate__zoomIn animate__delay-4s" loading="lazy">
+                <PixelTransition
+                  firstContent={
+                    <img
+                      src={DataImage.HeroImage}
+                      alt="Hero Image"
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  }
+                  secondContent={
+                    <img
+                      src={DataImage.SecondImage}
+                      alt="Second Image"
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  }
+                  gridSize={12}
+                  pixelColor='#ffffff'
+                  animationStepDuration={0.4}
+                  className="custom-pixel-card"
+                  style={{ width: "450px", height: "450px" }}
+                />
+
               </div>
+            </div>
             {/* tentang */}
             <div className="tentang mt-32 py-10" id="tentang">
               <div className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 bg-zinc-300 rounded-lg" data-aos="fade-up"
@@ -245,7 +280,7 @@ function App() {
               <div className="tools mt-32">
                 <h1 className="text-4xl/snug font-bold mb-4" data-aos="fade-up"
                   data-aos-duration="1000">Tools yang dipakai</h1>
-                <p className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base/loose opacity-50"
+                <p className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-left opacity-50"
                   data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Berikut ini beberapa tools yang
                   biasa saya pakai untuk pembuatan Website ataupun Desain </p>
                 <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 
