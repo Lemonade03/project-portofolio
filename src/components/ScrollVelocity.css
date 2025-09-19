@@ -1,0 +1,26 @@
+.parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.scroller {
+  display: flex;
+  gap: 1rem; /* jarak antar logo */
+  align-items: center;
+  width: max-content;
+  
+}
+
+.scroller div {
+  display: flex;
+  gap: 3rem;
+}
+
+
+
+@media (min-width: 768px) {
+  .scroller {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+}

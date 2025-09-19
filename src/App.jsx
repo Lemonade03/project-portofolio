@@ -21,9 +21,11 @@ import './components/PixelTransition.css';
 import PixelTransition from './components/PixelTransition';
 import VariableProximity from "./components/VariableProximity";
 import { useRef } from 'react';
-
-
+import BlurProximityText from "./components/BlurProximityText";
+import ScrollVelocity from './components/ScrollVelocity';
 import PreLoaderTyping from "./components/PreLoaderTyping";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -34,6 +36,9 @@ function App() {
   const [showHero, setShowHero] = useState(false);       // untuk hero konten
   const containerRef = useRef(null);
 
+  const handleAnimationComplete = () => {
+    console.log('Animation completed!');
+  };
 
 
   useEffect(() => {
@@ -79,7 +84,7 @@ function App() {
     const timeout = setTimeout(() => {
       console.log("Fallback: Memaksa preloader hilang");
       setLoading(false);
-    }, 5000);
+    }, 4000);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -91,12 +96,13 @@ function App() {
     <div className="min-h-screen relative"
       style={{ background: loading ? "#1e293b" : "transparent" }}
     >
-
+      <Navbar showHero={showHero} />
       {loading ? (
         <PreLoaderTyping onFinish={() => setLoading(false)} />
       ) : !showHero ? (
+        //welcome screen
         // animasi  + debu
-        <div className="text-center mt-20 ">
+        <div className="text-center flex items-center justify-center h-screen">
 
 
           {!typedDone ? (
@@ -124,7 +130,9 @@ function App() {
         </div>
 
       ) : (
+
         // HERO & KONTEN UTAMA 
+
 
         <div className="relative min-h-screen text-center mt-20">
           {/* Partikel di belakang */}
@@ -144,8 +152,11 @@ function App() {
               interactivity: { events: { onHover: { enable: true, mode: "repulse" } } }
             }}
             className="absolute top-0 left-0 w-full h-full -z-10"
-          />
-          }
+          />}
+
+
+
+
           {/* Konten Utama */}
           <div className="relative z-10">
             {/* HERO */}
@@ -177,16 +188,16 @@ function App() {
                   </q>
                 </div>
 
-                <h1 className="text-5xl leading-tight font-bold mb-6 ">
-                  <VariableProximity
-                    label={'Hi, Saya Mohammad Rizqy Ramadhan'}
-                    className={'variable-proximity-demo'}
-                    fromFontVariationSettings="'wght' 1000, 'opsz' 9"
-                    toFontVariationSettings="'wght' 1000, 'opsz' 40"
+
+                <h1 className="text-5xl leading-tight font-bold mb-6">
+                  <BlurProximityText
+                    text="Hi, Saya Mohammad Rizqy Ramadhan"
                     containerRef={containerRef}
-                    radius={100}
-                    falloff='linear'
-                  /></h1>
+                    delay={200}
+                    className="inline-block"
+                  />
+                </h1>
+
 
                 <p className="text-base/loose mb-6 opacity-90 font-semibold">
 
@@ -215,7 +226,9 @@ function App() {
                     Download CV <i className="ri-download-line ri-lg"></i></a>
 
                   <a href={`${import.meta.env.BASE_URL}sertifikat.pdf`}
-                     className="bg-slate-300 p-4 rounded-2xl hover:bg-blue-300 text-black">
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-slate-300 p-4 rounded-2xl hover:bg-blue-300 text-black">
                     Lihat Sertifikat <i className="ri-arrow-down-line ri-lg text-black"></i></a>
                 </div>
 
@@ -278,26 +291,31 @@ function App() {
               </div>
 
               <div className="tools mt-32">
-                <h1 className="text-4xl/snug font-bold mb-4" data-aos="fade-up"
+                <h1 className="text-4xl/snug font-bold mb-4"
+                  data-aos="fade-up"
                   data-aos-duration="1000">Tools yang dipakai</h1>
                 <p className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-left opacity-50"
                   data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Berikut ini beberapa tools yang
                   biasa saya pakai untuk pembuatan Website ataupun Desain </p>
-                <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 
-          grid-cols-1 gap-4">
-
-                  {listTools.map(tool => (
-                    <div className="flex items-start text-left gap-2 p-3 border bg-slate-300 border-zinc-600 rounded-md 
-            hover:bg-blue-300 group" key={tool.id} data-aos="fade-up"
-                      data-aos-duration="1000" data-aos-delay={tool.dad}>
-                      <img src={tool.gambar} alt="Tools Image" className="w-14 bg-zinc-800 p-1 
-              group-hover:bg-zinc-900" />
-                      <div>
-                        <h4 className="font-bold text-black">{tool.nama}</h4>
-                        <p className="opacity-70 text-black">{tool.ket}</p>
+                <div className="mt-14">
+                  <ScrollVelocity
+                    velocity={70}
+                    numCopies={3}
+                    className=""
+                  >
+                    {listTools.map(tool => (
+                      <div key={tool.id} className="flex flex-col items-center min-w-[140px]">
+                        <div className="w-24 h-24 flex items-center justify-center">
+                          <img
+                            src={tool.gambar}
+                            alt={tool.nama}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        <p className="mt-2 text-white font-semibold">{tool.nama}</p>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </ScrollVelocity>
                 </div>
               </div>
             </div>
@@ -372,14 +390,18 @@ function App() {
             </div>
             {/* Kontak */}
           </div>
+
         </div>
+
       )}
 
-
+      <Footer showHero={showHero} />
 
     </div>
 
+
   );
+
 }
 
 export default App;

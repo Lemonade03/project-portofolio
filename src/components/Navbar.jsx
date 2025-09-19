@@ -27,7 +27,7 @@ export default Navbar */
 
 import { useState, useEffect } from "react";
 
-const Navbar = () => {
+const Navbar = ({showHero}) => {
     const [active, setActive] = useState(false);
 
     useEffect(() => {
@@ -44,6 +44,8 @@ const Navbar = () => {
         window.removeEventListener("scroll", handleScroll);
       }
     }, []);
+    // 🚨 kalau belum masuk Hero, jangan render navbar sama sekali
+  if (!showHero) return null;
 
   return (
     <div className="navbar py-7 flex items-center justify-between">
