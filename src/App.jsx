@@ -207,7 +207,7 @@ function App() {
                   pekerjaan dan memiliki keahlian dalam
                   desain grafis serta penguasaan Microsoft
                   Office.  Saya mempunyai ketertarikkan dalam bidang Programming dan Designer. terutama pada pembuatan Website dan Desain UI/UX.
-                  Saya baru selesai mengikuti pelatihan web progamming yang di selenggaran oleh Pemerintah Kota Tangerang melalui blk
+                  Saya baru selesai mengikuti pelatihan web progamming yang di selenggarakan oleh Pemerintah Kota Tangerang melalui BLK
                   Kota Tangerang dan sudah berkompeten mempunyai sertifikasi Badan Nasional Bersertifikasi Profesi.
 
                 </p>
