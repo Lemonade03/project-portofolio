@@ -9,7 +9,7 @@ const Footer = ({showHero}) => {
                  hover:text-blue-600 transition-colors duration-300">Beranda</a>
             <a href="#tentang" className="sm:text-lg text-base font-medium
                  hover:text-blue-600 transition-colors duration-300">Tentang</a>
-            <a href="#proyek" className="sm:text-lg text-base font-medium
+            <a href="https://drive.google.com/drive/u/0/folders/1166er_g-6ceqs95Pxpzsk-a7w0-3OsIQ" target="_blank" className="sm:text-lg text-base font-medium
                  hover:text-blue-600 transition-colors duration-300">Proyek </a>
         </div>
         <div className="flex items-center gap-3">

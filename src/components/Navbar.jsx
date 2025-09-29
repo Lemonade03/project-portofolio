@@ -68,7 +68,7 @@ const Navbar = ({showHero}) => {
                  hover:text-blue-600 transition-colors duration-300">Tentang</a>
             </li>
             <li>
-                <a href="#proyek" className="sm:text-lg text-base font-medium
+                <a href="https://drive.google.com/drive/u/2/folders/1166er_g-6ceqs95Pxpzsk-a7w0-3OsIQ" target="_blank" className="sm:text-lg text-base font-medium
                 hover:text-blue-600 transition-colors duration-300">Proyek</a>
             </li>
             <li>
