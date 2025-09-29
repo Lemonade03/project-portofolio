@@ -211,25 +211,29 @@ function App() {
                   Kota Tangerang dan sudah berkompeten mempunyai sertifikasi Badan Nasional Bersertifikasi Profesi.
 
                 </p>
-                <div className="flex items-center sm:gap-4 gap-2">
+                <div className="flex flex-col sm:flex-row items-center sm:gap-4 gap-2 w-full">
                   <a
                     href={`${import.meta.env.BASE_URL}cvmohammadrizqyramadhan.pdf`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600">
+                    className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600 text-white w-full sm:w-auto text-center">
                     Lihat CV <i className="ri-eye-line ri-lg"></i>
                   </a>
 
-                  <a href={`${import.meta.env.BASE_URL}cvmohammadrizqyramadhan.pdf`}
+                  <a
+                    href={`${import.meta.env.BASE_URL}cvmohammadrizqyramadhan.pdf`}
                     download="cvmohammadrizqyramadhan.pdf"
-                    className="bg-blue-500 p-4 rounded-2xl hover:bg-slate-400">
-                    Download CV <i className="ri-download-line ri-lg"></i></a>
+                    className="bg-blue-500 p-4 rounded-2xl hover:bg-slate-400 text-white w-full sm:w-auto text-center">
+                    Download CV <i className="ri-download-line ri-lg"></i>
+                  </a>
 
-                  <a href={`${import.meta.env.BASE_URL}sertifikat.pdf`}
+                  <a
+                    href={`${import.meta.env.BASE_URL}sertifikat.pdf`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-slate-300 p-4 rounded-2xl hover:bg-blue-300 text-black">
-                    Lihat Sertifikat <i className="ri-arrow-down-line ri-lg text-black"></i></a>
+                    className="bg-slate-300 p-4 rounded-2xl hover:bg-blue-300 text-black w-full sm:w-auto text-center">
+                    Lihat Sertifikat <i className="ri-arrow-down-line ri-lg text-black"></i>
+                  </a>
                 </div>
 
               </div>
