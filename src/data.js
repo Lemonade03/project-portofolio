@@ -113,7 +113,7 @@ import Proyek2 from "/assets/proyek/proyek2.png";
 import Proyek3 from "/assets/proyek/proyek3.png";
 import Proyek4 from "/assets/proyek/proyek4.png";
 import Proyek5 from "/assets/proyek/proyek5.png";
-import Proyek6 from "/assets/proyek/proyek6.webp";
+import Proyek6 from "/assets/proyek/proyek6.png";
 
 export const listProyek = [
   {
@@ -161,13 +161,14 @@ export const listProyek = [
     dad: "600",
     link: "https://rizqyramadhan.pelatihanwebdev.com/keripikpisank/#"
   },
-  /*
+  
   {
     id: 6,
     gambar: Proyek6,
-    nama: "Company Profile 2.0",
+    nama: "New Calculator",
     desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["NextJS", "TailwindCSS", "Framermotion"],
+    tools: ["HTML", "CSS", "Javascript"],
     dad: "700",
-  },*/
+    link: "https://lemonade03.github.io/New-Calculator/"
+  },
 ];

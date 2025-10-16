@@ -286,7 +286,7 @@ function App() {
                     </div>
                     <div>
                       <h1 className="text-4xl mb-1 text-black">
-                        3<span className="text-violet-500"></span>
+                        5<span className="text-violet-500"></span>
                       </h1>
                       <p className="text-black">Bulan Pengalaman</p>
                     </div>
