@@ -36,7 +36,7 @@ function App() {
   const [showHero, setShowHero] = useState(false);       // untuk hero konten
   const containerRef = useRef(null);
 
-  const handleAnimationComplete = () => {
+  const _handleAnimationComplete = () => {
     console.log('Animation completed!');
   };
 
